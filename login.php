@@ -1,3 +1,10 @@
+<?php
+include('connection.php'); // Includes Login Script
+
+if(isset($_SESSION['login_user'])){
+header("location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title></title>
+    <title>stlech</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,10 +38,10 @@
             <h1 class="text-center login-title">Login to stlech.</h1>
             <div class="account-wall">
                 <img class="profile-img" src="./images/user-icon.jpeg" alt="">
-                <form class="form-signin">
-                <input type="text" class="form-control" placeholder="Username" required autofocus>
-                <input type="password" class="form-control" placeholder="Password" required>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <form class="form-signin" method="post" action="">
+                <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" >Sign in</button>
                 <label class="checkbox pull-left">
                     <input type="checkbox" value="remember-me">
                     Remember me
